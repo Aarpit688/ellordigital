@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #14151a;
+  --color-bg-alt: #191a20;
+  --color-surface: #1e2027;
+  --color-surface-2: #24262e;
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-ink: #f5f6f8;
+  --color-muted: #9a9ca8;
+  /* dim: lightened from #6b6d78 (3.54:1) to clear WCAG AA 4.5:1 on --color-bg */
+  --color-dim: #83858f;
+
+  --color-lime: #c6ff3d;
+  --color-lime-ink: #14151a;
+
+  --color-blue: #5b8def;
+  --color-violet: #9b5de5;
+  --color-pink: #f15bb5;
+  --color-amber: #ffb020;
+
+  /* next/font injects these CSS variables (see app/layout.tsx). */
+  --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-body: var(--font-inter), "Inter", sans-serif;
+  --font-mono: var(--font-plex-mono), "IBM Plex Mono", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 3px;
+  }
+  /* Tailwind v4 preflight resets interactive elements to cursor:default.
+     Restore the expected pointer on anything clickable. */
+  button:not(:disabled),
+  a[href],
+  label[for],
+  summary,
+  [role="button"]:not([aria-disabled="true"]),
+  select {
+    cursor: pointer;
+  }
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- signature gradient text ---------- */
+.gradient-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-blue),
+    var(--color-violet) 40%,
+    var(--color-pink) 70%,
+    var(--color-amber)
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 9s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.method-letter {
+  background-image: linear-gradient(
+    160deg,
+    var(--color-blue),
+    var(--color-violet),
+    var(--color-pink),
+    var(--color-amber)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-title-gradient {
+  background-image: linear-gradient(100deg, var(--color-violet), var(--color-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- marquee ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 26s linear infinite;
+}
+
+/* ---------- hero decorative float ---------- */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float-y {
+  animation: floatY 7s ease-in-out infinite;
+}
+
+/* underline accent used inline in copy */
+.accent-underline {
+  text-decoration-color: var(--color-lime);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+/* ---------- hero: oversized gradient display type (SpinX-style) ---------- */
+.hero-gradient-text {
+  background-image: linear-gradient(
+    92deg,
+    #5b8def 0%,
+    #7b7bf0 22%,
+    #9b5de5 46%,
+    #c56bd8 66%,
+    #5b8def 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: heroShimmer 8s ease-in-out infinite;
+}
+@keyframes heroShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* soft moving aurora behind the hero headline */
+.hero-aurora {
+  background:
+    radial-gradient(40% 55% at 20% 30%, rgba(91, 141, 239, 0.28), transparent 70%),
+    radial-gradient(45% 55% at 80% 38%, rgba(155, 93, 229, 0.24), transparent 70%),
+    radial-gradient(42% 50% at 55% 78%, rgba(241, 91, 181, 0.16), transparent 70%);
+  animation: auroraDrift 20s ease-in-out infinite alternate;
+}
+@keyframes auroraDrift {
+  from { transform: translate3d(-2%, -1%, 0) scale(1); }
+  to { transform: translate3d(3%, 2%, 0) scale(1.08); }
+}
+
+/* generic entrance for staggered lists */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* modal entrance */
+@keyframes modalOverlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modalPanelIn {
+  from { opacity: 0; transform: translateY(18px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-modal-overlay {
+  animation: modalOverlayIn 0.25s ease forwards;
+}
+.animate-modal-panel {
+  animation: modalPanelIn 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---------- first-load preloader ---------- */
+.pl-overlay {
+  animation: plExit 0.7s cubic-bezier(0.7, 0, 0.25, 1) 1.75s forwards;
+}
+@keyframes plExit {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* logomark bars drawing in */
+.pl-spine,
+.pl-bar {
+  opacity: 0;
+  transform-box: fill-box;
+}
+.pl-spine {
+  transform-origin: bottom;
+  animation: plScaleY 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.05s forwards;
+}
+.pl-bar {
+  transform-origin: left center;
+}
+.pl-bar-1 {
+  animation: plScaleX 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.22s forwards;
+}
+.pl-bar-2 {
+  animation: plScaleX 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.34s forwards;
+}
+.pl-bar-3 {
+  animation: plScaleX 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.46s forwards;
+}
+@keyframes plScaleY {
+  from { transform: scaleY(0); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+@keyframes plScaleX {
+  from { transform: scaleX(0); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+
+.pl-word {
+  opacity: 0;
+  animation: plUp 0.5s ease 0.6s forwards;
+}
+@keyframes plUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* cycling service words */
+.pl-services {
+  opacity: 0;
+  animation: plUp 0.4s ease 0.75s forwards;
+}
+.pl-services-list {
+  animation: plWords 1.15s steps(5, end) 0.85s forwards;
+}
+@keyframes plWords {
+  from { transform: translateY(0); }
+  to { transform: translateY(-83.333%); }
+}
+
+/* progress bar */
+.pl-fill {
+  width: 0;
+  animation: plProgress 1.35s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+@keyframes plProgress {
+  to { width: 100%; }
+}
