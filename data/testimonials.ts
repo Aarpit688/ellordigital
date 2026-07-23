@@ -9,7 +9,7 @@ export interface ClientTestimonial {
 export const TESTIMONIALS: ClientTestimonial[] = [
   {
     quote:
-      "They treated our checkout like the product it actually is. Same brand, half the friction — and we could finally trust the numbers we were making decisions from.",
+      "They treated our checkout like the product it actually is. Same brand, half the friction, and for once we could trust the numbers we were making decisions on.",
     author: "Dana Cole",
     role: "Head of Ecommerce",
     company: "Aurora Outfitters",
@@ -17,7 +17,7 @@ export const TESTIMONIALS: ClientTestimonial[] = [
   },
   {
     quote:
-      "Our patients stopped calling to do things they could now do themselves in under a minute. That's the whole point of a portal, and it took ELLOR to make ours deliver it.",
+      "Patients stopped calling to do things they could suddenly handle themselves in under a minute. That's the entire point of a portal, and it took ELLOR to make ours actually do it.",
     author: "Priya Nair",
     role: "Director of Digital",
     company: "Meridian Health",
@@ -25,7 +25,7 @@ export const TESTIMONIALS: ClientTestimonial[] = [
   },
   {
     quote:
-      "Same data, completely different product. New users get it now, and 'trust at a glance' turned out to be a design problem we could actually solve.",
+      "Same data, a completely different product. New users get it now, and it turned out 'trust at a glance' was a design problem we could actually solve.",
     author: "Sofia Reyes",
     role: "VP Product",
     company: "Basin & Co.",
@@ -33,7 +33,7 @@ export const TESTIMONIALS: ClientTestimonial[] = [
   },
   {
     quote:
-      "We finally look like we taste. The freshness story was hiding in plain sight, and ELLOR built the whole brand around it.",
+      "We finally look the way our coffee tastes. The freshness story was sitting in plain sight the whole time, and ELLOR built the brand around it.",
     author: "Marcus Lee",
     role: "Founder",
     company: "Northline Roasters",
@@ -41,7 +41,7 @@ export const TESTIMONIALS: ClientTestimonial[] = [
   },
   {
     quote:
-      "We were drowning in traffic that never booked. ELLOR pointed the whole strategy at intent, and the bookings finally followed the rankings.",
+      "We were buried in traffic that never booked a thing. ELLOR aimed the whole strategy at intent, and the bookings finally caught up with the rankings.",
     author: "Tom Fisher",
     role: "Marketing Lead",
     company: "Fernweh Travel",

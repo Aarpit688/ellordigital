@@ -1,18 +1,12 @@
-"use client";
-
 import Link from "next/link";
-import useReveal from "@/hooks/useReveal";
+import Reveal from "./Reveal";
 import BlogCover from "./BlogCover";
 import { formatDate } from "@/lib/format";
 import type { BlogPost } from "@/data/posts";
 
 export default function PostCard({ post }: { post: BlogPost }) {
-  const [ref, visible] = useReveal();
   return (
-    <article
-      ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} group flex flex-col`}
-    >
+    <Reveal as="article" className="group flex flex-col">
       <Link
         href={`/blog/${post.slug}`}
         className="block overflow-hidden border border-line mb-5"
@@ -42,6 +36,6 @@ export default function PostCard({ post }: { post: BlogPost }) {
       >
         Read article →
       </Link>
-    </article>
+    </Reveal>
   );
 }

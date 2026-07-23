@@ -57,7 +57,7 @@ export default function ProjectsGrid({
             tags={project.tags}
             reverse={i % 2 === 1}
             href={`/work/${project.slug}`}
-            mock={<ProjectVisual mockKey={project.mockKey} />}
+            mock={<ProjectVisual project={project} />}
           />
         ))
       )}

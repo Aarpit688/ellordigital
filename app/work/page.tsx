@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Work",
   description:
     "Selected work from ELLOR Digital — branding, product UX, ecommerce, web development, and growth case studies with real outcomes.",
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkPage() {

@@ -1,28 +1,11 @@
-"use client";
-
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ProjectVisual from "@/components/ProjectVisual";
 import ProjectCard from "@/components/ProjectCard";
 import CtaBanner from "@/components/CtaBanner";
-import useReveal from "@/hooks/useReveal";
+import Reveal from "@/components/Reveal";
 import { PROJECTS, type Project } from "@/data/projects";
-
-function Reveal({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const [ref, visible] = useReveal();
-  return (
-    <div ref={ref} className={`reveal ${visible ? "is-visible" : ""} ${className}`}>
-      {children}
-    </div>
-  );
-}
 
 export default function CaseStudyView({ project }: { project: Project }) {
   const nextProject =
@@ -42,7 +25,7 @@ export default function CaseStudyView({ project }: { project: Project }) {
       {/* hero visual */}
       <section className="max-w-[1180px] mx-auto px-5 md:px-10 pb-14 md:pb-16">
         <div className="relative bg-surface border border-line overflow-hidden">
-          <ProjectVisual mockKey={project.mockKey} />
+          <ProjectVisual project={project} aspect="aspect-[16/9]" priority />
         </div>
       </section>
 
@@ -148,7 +131,7 @@ export default function CaseStudyView({ project }: { project: Project }) {
 
       <CtaBanner
         heading="Have a project like this?"
-        subtext="Thirty minutes, no deck, no pressure — just a straight conversation about what's working and what isn't."
+        subtext="Thirty minutes, no deck, no pressure. Just a straight conversation about what's working and what isn't."
       />
 
       {/* next project */}
@@ -168,7 +151,7 @@ export default function CaseStudyView({ project }: { project: Project }) {
           description={nextProject.description}
           tags={nextProject.tags}
           href={`/work/${nextProject.slug}`}
-          mock={<ProjectVisual mockKey={nextProject.mockKey} />}
+          mock={<ProjectVisual project={nextProject} />}
         />
       </section>
     </>

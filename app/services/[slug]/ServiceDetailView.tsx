@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -9,8 +7,8 @@ import ProjectVisual from "@/components/ProjectVisual";
 import FaqAccordion from "@/components/FaqAccordion";
 import CtaBanner from "@/components/CtaBanner";
 import ServiceCard from "@/components/ServiceCard";
-import useReveal from "@/hooks/useReveal";
-import { useModal } from "@/components/ModalContext";
+import Reveal from "@/components/Reveal";
+import OpenModalButton from "@/components/OpenModalButton";
 import { SERVICES, type Service } from "@/data/services";
 import { getProjectBySlug } from "@/data/projects";
 
@@ -21,17 +19,11 @@ function DeliverableRow({
   title: string;
   description: string;
 }) {
-  const [ref, visible] = useReveal();
   return (
-    <div
-      ref={ref}
-      className={`reveal ${
-        visible ? "is-visible" : ""
-      } py-6 border-t border-line`}
-    >
+    <Reveal className="py-6 border-t border-line">
       <h3 className="font-display text-lg mb-1.5">{title}</h3>
       <p className="text-muted">{description}</p>
-    </div>
+    </Reveal>
   );
 }
 
@@ -44,22 +36,18 @@ function ProcessStep({
   title: string;
   description: string;
 }) {
-  const [ref, visible] = useReveal();
   return (
-    <div ref={ref} className={`reveal ${visible ? "is-visible" : ""}`}>
+    <Reveal delay={(index % 4) * 0.05}>
       <span className="font-mono text-xs text-lime">
         {String(index + 1).padStart(2, "0")}
       </span>
       <h3 className="font-display text-lg mt-2 mb-1.5">{title}</h3>
       <p className="text-muted text-[15px] leading-relaxed">{description}</p>
-    </div>
+    </Reveal>
   );
 }
 
 export default function ServiceDetailView({ service }: { service: Service }) {
-  const { openModal } = useModal();
-  const [overviewRef, overviewVisible] = useReveal();
-
   const relatedProject = getProjectBySlug(service.relatedProjectSlug);
   const otherServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
 
@@ -76,24 +64,21 @@ export default function ServiceDetailView({ service }: { service: Service }) {
 
       {/* overview */}
       <section className="max-w-[1180px] mx-auto px-5 md:px-10 pb-14 md:pb-16 grid md:grid-cols-[0.5fr_1fr] gap-10 md:gap-16">
-        <div ref={overviewRef} className={`reveal ${overviewVisible ? "is-visible" : ""}`}>
+        <Reveal>
           <div className="text-lime mb-4">
             <ServiceIcon name={service.icon} />
           </div>
           <p className="font-display text-2xl leading-snug">{service.tagline}</p>
-        </div>
+        </Reveal>
         <div className="space-y-4">
           {service.overview.map((para) => (
             <p key={para.slice(0, 24)} className="text-lg text-muted leading-relaxed">
               {para}
             </p>
           ))}
-          <button
-            onClick={openModal}
-            className="mt-2 inline-flex bg-lime text-lime-ink font-semibold text-sm px-6 py-3.5 hover:-translate-y-0.5 transition-transform"
-          >
-            Start a {service.name} Project
-          </button>
+          <OpenModalButton className="mt-2">
+            Start a {service.name} project
+          </OpenModalButton>
         </div>
       </section>
 
@@ -132,7 +117,8 @@ export default function ServiceDetailView({ service }: { service: Service }) {
             title={relatedProject.title}
             description={relatedProject.description}
             tags={relatedProject.tags}
-            mock={<ProjectVisual mockKey={relatedProject.mockKey} />}
+            href={`/work/${relatedProject.slug}`}
+            mock={<ProjectVisual project={relatedProject} />}
           />
         </section>
       )}
@@ -147,7 +133,7 @@ export default function ServiceDetailView({ service }: { service: Service }) {
 
       <CtaBanner
         heading={`Ready to talk ${service.name.toLowerCase()}?`}
-        subtext="Thirty minutes, no deck, no pressure — just a straight conversation about what's working and what isn't."
+        subtext="Thirty minutes, no deck, no pressure. Just a straight conversation about what's working and what isn't."
       />
 
       {/* explore other services */}
@@ -162,8 +148,8 @@ export default function ServiceDetailView({ service }: { service: Service }) {
           </Link>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {otherServices.map((s) => (
-            <ServiceCard key={s.slug} service={s} />
+          {otherServices.map((s, i) => (
+            <ServiceCard key={s.slug} service={s} index={i} />
           ))}
         </div>
       </section>

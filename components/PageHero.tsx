@@ -1,7 +1,5 @@
-"use client";
-
 import type { ReactNode } from "react";
-import useReveal from "@/hooks/useReveal";
+import Reveal from "./Reveal";
 
 export default function PageHero({
   eyebrow,
@@ -14,11 +12,10 @@ export default function PageHero({
   subtitle?: string;
   breadcrumbs?: ReactNode;
 }) {
-  const [ref, visible] = useReveal();
   return (
     <section className="max-w-[1180px] mx-auto px-5 md:px-10 pt-10 md:pt-14 pb-12 md:pb-16">
       {breadcrumbs}
-      <div ref={ref} className={`reveal ${visible ? "is-visible" : ""}`}>
+      <Reveal>
         {eyebrow && (
           <p className="font-mono text-xs tracking-[0.14em] uppercase text-muted mb-5">
             {eyebrow}
@@ -32,7 +29,7 @@ export default function PageHero({
             {subtitle}
           </p>
         )}
-      </div>
+      </Reveal>
     </section>
   );
 }

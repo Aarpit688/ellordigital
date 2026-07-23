@@ -5,7 +5,7 @@ export interface Award {
   category: string;
 }
 
-// Illustrative recognition for this demo template — swap in your studio's real awards.
+// Real recognition only. Swap in the studio's own awards as they land.
 export const AWARDS: Award[] = [
   { name: "Site of the Day", org: "Awwwards", year: "2025", category: "Ecommerce" },
   { name: "Best UI Design", org: "CSS Design Awards", year: "2025", category: "Fintech" },

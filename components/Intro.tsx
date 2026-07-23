@@ -1,15 +1,11 @@
-"use client";
-
 import Link from "next/link";
-import useReveal from "@/hooks/useReveal";
+import Reveal from "./Reveal";
 
 export default function Intro() {
-  const [ref, visible] = useReveal<HTMLElement>();
-
   return (
-    <section
-      ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} max-w-[1180px] mx-auto px-5 md:px-10 py-16 md:py-20 grid md:grid-cols-[0.8fr_1.2fr] gap-12 md:gap-16 items-center border-t border-line`}
+    <Reveal
+      as="section"
+      className="max-w-[1180px] mx-auto px-5 md:px-10 py-16 md:py-20 grid md:grid-cols-[0.8fr_1.2fr] gap-12 md:gap-16 items-center border-t border-line"
     >
       <div aria-hidden="true" className="relative w-full aspect-square">
         <div
@@ -49,14 +45,13 @@ export default function Intro() {
           What we do
         </p>
         <h2 className="font-display text-[clamp(28px,4vw,44px)] leading-tight mb-5">
-          At ELLOR, we don&apos;t decorate —{" "}
-          <u className="accent-underline">we focus</u>.
+          We don&apos;t decorate. <u className="accent-underline">We focus.</u>
         </h2>
         <p className="text-lg text-muted leading-relaxed max-w-[560px] mb-7">
-          A website is a lens. Point it wrong and your story scatters. We
-          spend most of our energy on the angle: research, positioning, and
-          information architecture, so the design and code that follow only
-          have to focus what&apos;s already true about your brand.
+          A website is a lens. Aim it wrong and your story scatters. We spend
+          most of our energy on the aim — research, positioning, and structure —
+          so the design and code that follow only have to sharpen what&apos;s
+          already true about your brand.
         </p>
         <Link
           href="/approach"
@@ -65,6 +60,6 @@ export default function Intro() {
           See how we work ↓
         </Link>
       </div>
-    </section>
+    </Reveal>
   );
 }

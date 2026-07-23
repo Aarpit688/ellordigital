@@ -1,27 +1,34 @@
-import type { ComponentType } from "react";
-import {
-  BrowserChrome,
-  AuroraMock,
-  MeridianMock,
-  NorthlineMock,
-  BasinMock,
-  FernwehMock,
-} from "./ProjectMocks";
+import Media from "./Media";
+import GradientArt, { type ArtTint } from "./GradientArt";
+import type { Project } from "@/data/projects";
 
-const MOCKS: Record<string, ComponentType> = {
-  aurora: AuroraMock,
-  meridian: MeridianMock,
-  northline: NorthlineMock,
-  basin: BasinMock,
-  fernweh: FernwehMock,
+// Maps each work category to a palette tint so the fallback cover art stays
+// recognizable per project type.
+const CATEGORY_TINT: Record<string, ArtTint> = {
+  branding: "pink",
+  uiux: "violet",
+  web: "blue",
+  ecommerce: "amber",
+  marketing: "teal",
 };
 
-export default function ProjectVisual({ mockKey }: { mockKey: string }) {
-  const MockComponent = MOCKS[mockKey] ?? AuroraMock;
+export default function ProjectVisual({
+  project,
+  aspect = "aspect-[16/10]",
+  priority = false,
+}: {
+  project: Project;
+  aspect?: string;
+  priority?: boolean;
+}) {
+  const tint = CATEGORY_TINT[project.category] ?? "blue";
   return (
-    <>
-      <BrowserChrome />
-      <MockComponent />
-    </>
+    <Media
+      src={`/work/${project.slug}.webp`}
+      alt={`${project.client} — ${project.title}`}
+      aspect={aspect}
+      priority={priority}
+      fallback={<GradientArt tint={tint} label={project.tags[0]} />}
+    />
   );
 }

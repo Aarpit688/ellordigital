@@ -25,9 +25,13 @@ export default async function connectDB(): Promise<typeof mongoose> {
       );
     }
     mongoose.set("strictQuery", true);
+    // Pin the database name explicitly. The connection string has none, so
+    // without this Mongoose would use Mongo's default "test" db. Override with
+    // MONGODB_DB if you want a different name (e.g. per environment).
+    const dbName = process.env.MONGODB_DB || "ellor";
     // bufferCommands:false so queries fail fast instead of hanging when the
     // connection is not ready — better behavior inside short-lived functions.
-    cached.promise = mongoose.connect(uri, { bufferCommands: false });
+    cached.promise = mongoose.connect(uri, { bufferCommands: false, dbName });
   }
 
   cached.conn = await cached.promise;

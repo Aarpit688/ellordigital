@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { useModal } from "./ModalContext";
+import OpenModalButton from "./OpenModalButton";
 
 const LOGOS = [
   "Aurora Outfitters",
@@ -13,8 +11,6 @@ const LOGOS = [
 ];
 
 export default function Hero() {
-  const { openModal } = useModal();
-
   return (
     <section className="relative overflow-hidden">
       {/* moving aurora glow behind the headline */}
@@ -24,22 +20,18 @@ export default function Hero() {
       />
 
       <div className="relative max-w-[1180px] mx-auto px-5 md:px-10 pt-14 md:pt-20 pb-14">
-        <p className="font-mono text-xs md:text-sm tracking-[0.14em] uppercase text-muted mb-6 animate-fade-up">
+        {/* <p className="font-mono text-xs md:text-sm tracking-[0.14em] uppercase text-muted mb-6 animate-fade-up">
           Ellor Digital / Brand &amp; Web Studio / Los Angeles
-        </p>
+        </p> */}
 
-        <h1 className="font-display font-bold tracking-tight leading-[0.9] text-[clamp(48px,11.5vw,150px)] mb-7">
-          <span
-            className="hero-gradient-text block animate-fade-up"
-            style={{ animationDelay: "0.05s" }}
-          >
-            Clarity that
+        <h1 className="font-display font-bold tracking-tight leading-[0.9] text-[clamp(48px,11.5vw,150px)] mb-7 text-ink">
+          <span className="hero-line">
+            <span style={{ animationDelay: "0.15s" }}>Clarity that</span>
           </span>
-          <span
-            className="hero-gradient-text block animate-fade-up"
-            style={{ animationDelay: "0.12s" }}
-          >
-            drives growth.
+          <span className="hero-line">
+            <span style={{ animationDelay: "0.3s" }}>
+              drives <span className="hero-accent">growth.</span>
+            </span>
           </span>
         </h1>
 
@@ -58,14 +50,9 @@ export default function Hero() {
             href="/work"
             className="inline-flex items-center gap-2 bg-lime text-lime-ink font-semibold text-sm px-6 py-3.5 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(198,255,61,0.25)] transition-all"
           >
-            See Our Work
+            See our work
           </Link>
-          <button
-            onClick={openModal}
-            className="inline-flex items-center gap-2 border border-white/25 font-semibold text-sm px-6 py-3.5 hover:border-ink hover:-translate-y-0.5 transition-all"
-          >
-            Start a Project
-          </button>
+          <OpenModalButton variant="outline">Start a project</OpenModalButton>
         </div>
 
         <div

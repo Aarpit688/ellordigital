@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { submitLead } from "@/lib/api";
 import { useModal } from "./ModalContext";
 import { LogoMark } from "./Logo";
+import { lockScroll, unlockScroll } from "@/lib/scrollLock";
 
 const initialForm = {
   fullName: "",
@@ -23,10 +24,9 @@ export default function LeadModal() {
   const firstFieldRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    if (!open) return;
+    lockScroll();
+    return () => unlockScroll();
   }, [open]);
 
   useEffect(() => {
@@ -115,14 +115,11 @@ export default function LeadModal() {
           {status === "done" ? (
             <div>
               <h2 className="font-display text-2xl mb-2.5">
-                You&apos;re booked in spirit ✓
+                Request received ✓
               </h2>
-              <p className="text-muted text-sm">
-                This is a demo form — nothing was actually scheduled. Wire{" "}
-                <code className="font-mono text-xs bg-black/30 px-1.5 py-0.5 rounded">
-                  POST /api/leads
-                </code>{" "}
-                up to your CRM, calendar, or email service to make it real.
+              <p className="text-muted text-sm leading-relaxed">
+                Thanks — we&apos;ve got your details. We&apos;ll reach out within
+                one business day to lock in a time for your free strategy call.
               </p>
             </div>
           ) : (

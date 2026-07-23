@@ -2,12 +2,14 @@ import { NextResponse } from "next/server";
 import connectDB from "@/lib/db";
 import Lead from "@/lib/models/Lead";
 
-// Mongoose needs the Node.js runtime (not Edge). force-dynamic keeps the
-// GET listing fresh instead of being statically cached.
+// Mongoose needs the Node.js runtime (not Edge).
 export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
 
-// POST /api/leads — create a lead from the "Book a Free Strategy Call" modal
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// POST /api/leads — create a lead. Shared by the contact-page form
+// (source: "contact-page") and the "Book a Free Strategy Call" modal
+// (source: "website-modal").
 export async function POST(req: Request) {
   try {
     await connectDB();
@@ -17,6 +19,12 @@ export async function POST(req: Request) {
     if (!fullName || !email || !phone || !details) {
       return NextResponse.json(
         { message: "Full name, email, phone, and project details are required." },
+        { status: 400 }
+      );
+    }
+    if (!EMAIL_RE.test(email)) {
+      return NextResponse.json(
+        { message: "Please provide a valid email address." },
         { status: 400 }
       );
     }
@@ -44,14 +52,6 @@ export async function POST(req: Request) {
   }
 }
 
-// GET /api/leads — list leads (demo/admin use only; add auth before production)
-export async function GET() {
-  try {
-    await connectDB();
-    const leads = await Lead.find().sort({ createdAt: -1 }).limit(100);
-    return NextResponse.json(leads);
-  } catch (err) {
-    console.error("[leads] list failed:", err);
-    return NextResponse.json({ message: "Could not fetch leads." }, { status: 500 });
-  }
-}
+// No GET here on purpose: leads contain personal contact info, so the list is
+// not exposed over a public URL. View submissions in MongoDB Atlas/Compass,
+// or add an authenticated admin route when you build an internal dashboard.

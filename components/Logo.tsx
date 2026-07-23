@@ -9,12 +9,15 @@
 export function LogoMark({
   size = 32,
   className = "",
+  id,
 }: {
   size?: number;
   className?: string;
+  id?: string;
 }) {
   return (
     <svg
+      id={id}
       width={size}
       height={size}
       viewBox="0 0 44 44"
@@ -34,14 +37,16 @@ export default function Logo({
   size = 28,
   className = "",
   wordmarkClassName = "",
+  markId,
 }: {
   size?: number;
   className?: string;
   wordmarkClassName?: string;
+  markId?: string;
 }) {
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>
-      <LogoMark size={size} />
+      <LogoMark size={size} id={markId} />
       <span
         className={`font-display font-bold tracking-tight ${wordmarkClassName}`}
       >

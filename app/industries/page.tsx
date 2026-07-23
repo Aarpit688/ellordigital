@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Industries",
   description:
     "The verticals we know well — healthcare, ecommerce, fintech, travel, food & beverage, and SaaS. Strategy, design, and code shaped around each industry's real problems.",
+  alternates: { canonical: "/industries" },
 };
 
 export default function IndustriesPage() {

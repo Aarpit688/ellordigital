@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Where ELLOR helps: brand identity, UI/UX design, web design & development, ecommerce, SEO, digital marketing, website strategy, mobile apps, and support.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesLayout({

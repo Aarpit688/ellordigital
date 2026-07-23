@@ -32,8 +32,8 @@ export default function CookieBar() {
   return (
     <div className="fixed left-4 right-4 bottom-4 sm:right-auto sm:max-w-[360px] z-[60] bg-surface/95 backdrop-blur border border-line rounded-lg shadow-[0_12px_40px_rgba(0,0,0,0.45)] px-4 py-3.5 flex gap-3.5 items-start text-[13px] text-muted">
       <p className="leading-relaxed">
-        This demo site uses cookies for the sake of demonstration. No data
-        actually leaves your browser.
+        We use cookies to understand how the site is used and to improve your
+        experience. By continuing, you agree to their use.
       </p>
       <button
         onClick={dismiss}

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Insights",
   description:
     "Notes on strategy, design, development, and growth from the ELLOR studio — the thinking behind how we work, minus the fluff.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

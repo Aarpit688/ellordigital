@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { submitNewsletter } from "@/lib/api";
 import Logo from "./Logo";
+import UiIcon from "./UiIcon";
 import { SERVICES } from "@/data/services";
 
 type Status = "idle" | "loading" | "done" | "error";
@@ -90,16 +91,23 @@ export default function Footer() {
 
         <div className="flex flex-col gap-3">
           <h2 className="font-mono text-xs uppercase tracking-wide text-dim mb-1.5">Contact</h2>
-          <a href="tel:2138949933" className="text-sm text-muted hover:text-lime">213.894.9933</a>
-          <a href="mailto:hello@ellordigital.example" className="text-sm text-muted hover:text-lime break-all">
-            hello@ellordigital.example
+          <a href="tel:2138949933" className="flex items-center gap-2.5 text-sm text-muted hover:text-lime">
+            <UiIcon name="phone" size={15} className="text-lime shrink-0" />
+            213.894.9933
           </a>
-          <span className="text-sm text-dim">424 Sunset Ave, Los Angeles, CA</span>
+          <a href="mailto:hello@ellordigital.com" className="flex items-center gap-2.5 text-sm text-muted hover:text-lime break-all">
+            <UiIcon name="mail" size={15} className="text-lime shrink-0" />
+            hello@ellordigital.com
+          </a>
+          <span className="flex items-center gap-2.5 text-sm text-dim">
+            <UiIcon name="pin" size={15} className="text-lime shrink-0" />
+            424 Sunset Ave, Los Angeles, CA
+          </span>
         </div>
       </div>
 
       <div className="max-w-[1180px] mx-auto px-5 md:px-10 py-6 border-t border-line flex flex-col md:flex-row justify-between items-center gap-3.5 text-[13px] text-dim text-center">
-        <span>© 2026 ELLOR Digital. Template for demonstration purposes.</span>
+        <span>© 2026 ELLOR Digital. All rights reserved.</span>
         <div className="flex gap-3.5">
           <a href="#" className="font-mono text-xs border border-line px-2.5 py-1.5 hover:text-lime hover:border-lime transition-colors">
             <span aria-hidden="true">IG</span>

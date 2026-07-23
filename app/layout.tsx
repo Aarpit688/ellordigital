@@ -15,7 +15,7 @@ const ORG_JSONLD: Record<string, unknown> = {
       url: SITE_URL,
       logo: `${SITE_URL}/favicon.svg`,
       description: SITE_DESCRIPTION,
-      email: "hello@ellordigital.example",
+      email: "hello@ellordigital.com",
       telephone: "+1-213-894-9933",
       address: {
         "@type": "PostalAddress",
@@ -112,7 +112,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable}`}
     >
-      <body>
+      <body suppressHydrationWarning>
         <JsonLd data={ORG_JSONLD} />
         <Shell>{children}</Shell>
       </body>

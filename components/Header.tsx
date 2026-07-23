@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import ServiceIcon from "./ServiceIcon";
 import { useModal } from "./ModalContext";
+import { lockScroll, unlockScroll } from "@/lib/scrollLock";
 import { SERVICES } from "@/data/services";
 
 export default function Header() {
@@ -26,10 +27,9 @@ export default function Header() {
 
   // close mobile menu whenever a link is clicked, and lock scroll while open
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    if (!mobileOpen) return;
+    lockScroll();
+    return () => unlockScroll();
   }, [mobileOpen]);
 
   return (
@@ -44,7 +44,7 @@ export default function Header() {
           }`}
         >
           <Link href="/" onClick={() => setMobileOpen(false)} aria-label="ELLOR Digital home">
-            <Logo size={26} wordmarkClassName="text-lg" />
+            <Logo size={26} wordmarkClassName="text-lg" markId="site-logo-mark" />
           </Link>
 
           <nav

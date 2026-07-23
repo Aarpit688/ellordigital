@@ -1,23 +1,18 @@
-"use client";
-
 import Link from "next/link";
 import ServiceIcon from "./ServiceIcon";
-import useReveal from "@/hooks/useReveal";
+import Reveal from "./Reveal";
 import { getProjectBySlug } from "@/data/projects";
 import type { Industry } from "@/data/industries";
 
 export default function IndustryCard({ industry }: { industry: Industry }) {
-  const [ref, visible] = useReveal();
   const related = industry.relatedProjectSlug
     ? getProjectBySlug(industry.relatedProjectSlug)
     : undefined;
 
   return (
-    <article
-      ref={ref}
-      className={`reveal ${
-        visible ? "is-visible" : ""
-      } bg-surface border border-line p-7 md:p-8 flex flex-col hover:border-lime/40 hover:-translate-y-1 transition-all duration-300`}
+    <Reveal
+      as="article"
+      className="bg-surface border border-line p-7 md:p-8 flex flex-col hover:border-lime/40 hover:-translate-y-1 transition-all duration-300"
     >
       <div className="text-lime mb-5">
         <ServiceIcon name={industry.icon} />
@@ -48,6 +43,6 @@ export default function IndustryCard({ industry }: { industry: Industry }) {
           See related work →
         </Link>
       )}
-    </article>
+    </Reveal>
   );
 }

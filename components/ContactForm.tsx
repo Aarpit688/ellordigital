@@ -49,13 +49,9 @@ export default function ContactForm() {
     return (
       <div className="border border-line bg-surface p-8">
         <h3 className="font-display text-2xl mb-2.5">Message received ✓</h3>
-        <p className="text-muted text-[15px]">
-          This is a demo form — nothing was actually sent to a real inbox,
-          but the submission did save to MongoDB via{" "}
-          <code className="font-mono text-xs bg-black/30 px-1.5 py-0.5 rounded">
-            POST /api/leads
-          </code>
-          . Wire up email notifications or a CRM integration to make it real.
+        <p className="text-muted text-[15px] leading-relaxed">
+          Thanks for reaching out. A strategist reads every enquiry personally
+          and will get back to you within one business day.
         </p>
       </div>
     );

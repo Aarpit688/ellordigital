@@ -18,6 +18,9 @@
   --color-violet: #9b5de5;
   --color-pink: #f15bb5;
   --color-amber: #ffb020;
+  --color-teal: #2dd4bf;
+  --color-cyan: #38bdf8;
+  --color-coral: #ff6b57;
 
   /* next/font injects these CSS variables (see app/layout.tsx). */
   --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
@@ -142,15 +145,34 @@
   text-underline-offset: 5px;
 }
 
-/* ---------- hero: oversized gradient display type (SpinX-style) ---------- */
-.hero-gradient-text {
+/* ---------- hero: oversized display type with line-by-line mask reveal (SpinX-style) ---------- */
+/* Each line sits in a clipping mask; the inner span slides up from below on load.
+   Bottom padding + matching negative margin keeps descenders (g, y) from clipping
+   without opening a visible gap between lines. */
+.hero-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.1em;
+}
+.hero-line > span {
+  display: block;
+  transform: translateY(115%);
+  animation: heroLineIn 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes heroLineIn {
+  to { transform: translateY(0); }
+}
+
+/* animated gradient fill on the accent word(s) inside the heading */
+.hero-accent {
   background-image: linear-gradient(
     92deg,
     #5b8def 0%,
-    #7b7bf0 22%,
-    #9b5de5 46%,
-    #c56bd8 66%,
-    #5b8def 100%
+    #7b7bf0 20%,
+    #9b5de5 42%,
+    #f15bb5 66%,
+    #38bdf8 100%
   );
   background-size: 220% 100%;
   -webkit-background-clip: text;
@@ -161,6 +183,21 @@
 @keyframes heroShimmer {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+/* ---------- gradient hairline divider ---------- */
+.rule-gradient {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-blue) 20%,
+    var(--color-violet) 50%,
+    var(--color-pink) 80%,
+    transparent
+  );
+  opacity: 0.5;
 }
 
 /* soft moving aurora behind the hero headline */
@@ -202,16 +239,7 @@
   animation: modalPanelIn 0.34s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* ---------- first-load preloader ---------- */
-.pl-overlay {
-  animation: plExit 0.7s cubic-bezier(0.7, 0, 0.25, 1) 1.75s forwards;
-}
-@keyframes plExit {
-  to {
-    transform: translateY(-100%);
-  }
-}
-
+/* ---------- first-load preloader (intro only; exit is a JS FLIP) ---------- */
 /* logomark bars drawing in */
 .pl-spine,
 .pl-bar {
@@ -220,19 +248,19 @@
 }
 .pl-spine {
   transform-origin: bottom;
-  animation: plScaleY 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.05s forwards;
+  animation: plScaleY 0.32s cubic-bezier(0.2, 0.8, 0.2, 1) 0.02s forwards;
 }
 .pl-bar {
   transform-origin: left center;
 }
 .pl-bar-1 {
-  animation: plScaleX 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.22s forwards;
+  animation: plScaleX 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
 }
 .pl-bar-2 {
-  animation: plScaleX 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.34s forwards;
+  animation: plScaleX 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.18s forwards;
 }
 .pl-bar-3 {
-  animation: plScaleX 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.46s forwards;
+  animation: plScaleX 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.26s forwards;
 }
 @keyframes plScaleY {
   from { transform: scaleY(0); opacity: 0; }
@@ -245,7 +273,7 @@
 
 .pl-word {
   opacity: 0;
-  animation: plUp 0.5s ease 0.6s forwards;
+  animation: plUp 0.35s ease 0.3s forwards;
 }
 @keyframes plUp {
   from { opacity: 0; transform: translateY(12px); }
@@ -255,10 +283,10 @@
 /* cycling service words */
 .pl-services {
   opacity: 0;
-  animation: plUp 0.4s ease 0.75s forwards;
+  animation: plUp 0.3s ease 0.38s forwards;
 }
 .pl-services-list {
-  animation: plWords 1.15s steps(5, end) 0.85s forwards;
+  animation: plWords 0.5s steps(5, end) 0.45s forwards;
 }
 @keyframes plWords {
   from { transform: translateY(0); }
@@ -268,7 +296,7 @@
 /* progress bar */
 .pl-fill {
   width: 0;
-  animation: plProgress 1.35s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+  animation: plProgress 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.08s forwards;
 }
 @keyframes plProgress {
   to { width: 100%; }
