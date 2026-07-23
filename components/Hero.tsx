@@ -13,10 +13,11 @@ const LOGOS = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* moving aurora glow behind the headline */}
+      {/* static aurora glow behind the headline — bottom is pinned to the marquee's
+          top border (marquee height + section's pb-14 are both breakpoint-constant) */}
       <div
         aria-hidden="true"
-        className="hero-aurora pointer-events-none absolute -top-40 left-0 right-0 h-[720px] opacity-80"
+        className="hero-aurora pointer-events-none absolute -top-40 left-0 right-0 bottom-27.5 opacity-80"
       />
 
       <div className="relative max-w-[1180px] mx-auto px-5 md:px-10 pt-14 md:pt-20 pb-14">

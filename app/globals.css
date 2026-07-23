@@ -200,17 +200,12 @@
   opacity: 0.5;
 }
 
-/* soft moving aurora behind the hero headline */
+/* soft static aurora glow behind the hero headline */
 .hero-aurora {
   background:
     radial-gradient(40% 55% at 20% 30%, rgba(91, 141, 239, 0.28), transparent 70%),
     radial-gradient(45% 55% at 80% 38%, rgba(155, 93, 229, 0.24), transparent 70%),
     radial-gradient(42% 50% at 55% 78%, rgba(241, 91, 181, 0.16), transparent 70%);
-  animation: auroraDrift 20s ease-in-out infinite alternate;
-}
-@keyframes auroraDrift {
-  from { transform: translate3d(-2%, -1%, 0) scale(1); }
-  to { transform: translate3d(3%, 2%, 0) scale(1.08); }
 }
 
 /* generic entrance for staggered lists */
