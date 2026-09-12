@@ -96,7 +96,7 @@ export default function Footer() {
           </a>
           <a href="mailto:+officialellordigital@gmail.com" className="flex items-center gap-2.5 text-sm text-muted hover:text-lime break-all">
             <UiIcon name="mail" size={15} className="text-lime shrink-0" />
-            +officialellordigital@gmail.com
+            officialellordigital@gmail.com
           </a>
           <span className="flex items-center gap-2.5 text-sm text-dim">
             <UiIcon name="pin" size={15} className="text-lime shrink-0" />
