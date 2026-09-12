@@ -55,10 +55,24 @@ npm run dev        # http://localhost:3000  (pages + API together)
 Set `MONGODB_URI` in `.env.local` (see `.env.example`). The lead and
 newsletter forms need it; everything else renders without it.
 
+### Lead notification emails
+
+Every contact-form and strategy-call submission is emailed to
+`officialellordigital@gmail.com` (override with `LEAD_NOTIFY_TO`) in addition to
+being stored in MongoDB. Set `SMTP_USER` + `SMTP_PASS` to enable it — for Gmail
+that means enabling 2-Step Verification and generating an
+[App Password](https://myaccount.google.com/apppasswords); the normal account
+password is rejected by Google's SMTP. The reply-to is set to the person who
+filled in the form, so replying in Gmail goes straight to them.
+
+`/api/leads` treats the DB write and the email as independent: if one fails the
+other still goes through, and the submission only errors out if both fail.
+
 ## Deploy to Vercel
 
 1. Import the repo and set **Root Directory = `ellor`**.
-2. Add the `MONGODB_URI` environment variable (Project → Settings → Environment Variables).
+2. Add the `MONGODB_URI`, `SMTP_USER`, and `SMTP_PASS` environment variables
+   (Project → Settings → Environment Variables).
 3. Deploy. Framework preset auto-detects Next.js — pages are static/SSG, and
    `app/api/*` become serverless functions. That's the whole backend.
 

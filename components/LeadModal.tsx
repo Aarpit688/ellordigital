@@ -161,8 +161,8 @@ export default function LeadModal() {
                   />
                   <Field
                     id="modalWebsite"
-                    label="Your Website URL"
-                    type="url"
+                    label="Your Website URL (optional)"
+                    placeholder="yourcompany.com"
                     value={form.website}
                     onChange={update("website")}
                   />
@@ -203,6 +203,7 @@ function Field({
   onChange,
   required,
   ref,
+  placeholder,
 }: {
   id: string;
   label: string;
@@ -211,6 +212,7 @@ function Field({
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   required?: boolean;
   ref?: React.Ref<HTMLInputElement>;
+  placeholder?: string;
 }) {
   return (
     <div className="mb-4">
@@ -224,6 +226,7 @@ function Field({
         value={value}
         onChange={onChange}
         required={required}
+        placeholder={placeholder}
         className="w-full bg-transparent border-b border-line py-2 text-[15px] focus:outline-none focus:border-lime transition-colors"
       />
     </div>

@@ -65,7 +65,7 @@ export default function ContactForm() {
       </div>
       <div className="grid md:grid-cols-2 gap-4">
         <Field id="contactPhone" label="Phone Number" type="tel" value={form.phone} onChange={update("phone")} required />
-        <Field id="contactWebsite" label="Company Website" type="url" value={form.website} onChange={update("website")} />
+        <Field id="contactWebsite" label="Company Website (optional)" placeholder="yourcompany.com" value={form.website} onChange={update("website")} />
       </div>
       <div className="grid md:grid-cols-2 gap-4">
         <SelectField
@@ -113,6 +113,7 @@ function Field({
   onChange,
   required,
   textarea,
+  placeholder,
 }: {
   id: string;
   label: string;
@@ -123,6 +124,7 @@ function Field({
   ) => void;
   required?: boolean;
   textarea?: boolean;
+  placeholder?: string;
 }) {
   return (
     <div className="mb-4">
@@ -135,6 +137,7 @@ function Field({
           value={value}
           onChange={onChange}
           required={required}
+          placeholder={placeholder}
           rows={4}
           className="w-full bg-transparent border-b border-line py-2 text-[15px] focus:outline-none focus:border-lime resize-none"
         />
@@ -145,6 +148,7 @@ function Field({
           value={value}
           onChange={onChange}
           required={required}
+          placeholder={placeholder}
           className="w-full bg-transparent border-b border-line py-2 text-[15px] focus:outline-none focus:border-lime"
         />
       )}
