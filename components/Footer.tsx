@@ -94,13 +94,13 @@ export default function Footer() {
             <UiIcon name="phone" size={15} className="text-lime shrink-0" />
             +91 9311127429
           </a>
-          <a href="mailto:hello@ellordigital.com" className="flex items-center gap-2.5 text-sm text-muted hover:text-lime break-all">
+          <a href="mailto:+officialellordigital@gmail.com" className="flex items-center gap-2.5 text-sm text-muted hover:text-lime break-all">
             <UiIcon name="mail" size={15} className="text-lime shrink-0" />
-            hello@ellordigital.com
+            +officialellordigital@gmail.com
           </a>
           <span className="flex items-center gap-2.5 text-sm text-dim">
             <UiIcon name="pin" size={15} className="text-lime shrink-0" />
-            424 Sunset Ave, Los Angeles, CA
+            Spaze I-Tech, Sector 49 , Gurugram , Haryana , 122001
           </span>
         </div>
       </div>

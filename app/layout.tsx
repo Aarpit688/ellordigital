@@ -15,7 +15,7 @@ const ORG_JSONLD: Record<string, unknown> = {
       url: SITE_URL,
       logo: `${SITE_URL}/favicon.svg`,
       description: SITE_DESCRIPTION,
-      email: "hello@ellordigital.com",
+      email: "+officialellordigital@gmail.com",
       telephone: "+1-213-894-9933",
       address: {
         "@type": "PostalAddress",

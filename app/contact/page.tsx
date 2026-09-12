@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 
 const DETAILS = [
   { label: "Phone", value: "", icon: "phone", chip: "bg-blue/10 text-blue border-blue/25" },
-  { label: "Email", value: "hello@ellordigital.com", href: "mailto:hello@ellordigital.com", icon: "mail", chip: "bg-violet/15 text-violet border-violet/25" },
+  { label: "Email", value: "+officialellordigital@gmail.com", href: "mailto:+officialellordigital@gmail.com", icon: "mail", chip: "bg-violet/15 text-violet border-violet/25" },
   { label: "Studio", value: "", icon: "pin", chip: "bg-pink/10 text-pink border-pink/25" },
-  { label: "Hours", value: "Mon–Fri, 9am–6pm PT", icon: "clock", chip: "bg-amber/10 text-amber border-amber/25" },
+  { label: "Hours", value: "Mon–Fri, 9am–6pm IST", icon: "clock", chip: "bg-amber/10 text-amber border-amber/25" },
 ];
 
 export default function ContactPage() {
