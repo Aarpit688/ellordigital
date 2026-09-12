@@ -31,9 +31,9 @@ export const PROJECTS: Project[] = [
   {
     slug: "aurora-outfitters",
     eyebrow: "Aurora Outfitters — Ecommerce Rebuild",
-    title: "Half the Checkout Time, Same Brand",
+    title: "We Build Stores People Can Actually Check Out On",
     description:
-      "A full Shopify rebuild aimed at load speed and a reworked mobile checkout. We chased the numbers and kept the outdoor-gear grit that makes the brand look like itself.",
+      "Most redesigns move buttons around. We start with the checkout, because that's where the money either gets made or gets lost. Slow load times, confusing mobile flows, and brand-off packaging pages all cost more than they look like they cost. We fix the path from browse to buy first, then make it look like the brand behind it.",
     tags: ["Ecommerce", "Performance", "Shopify"],
     category: "ecommerce",
     client: "Aurora Outfitters",
@@ -66,10 +66,10 @@ export const PROJECTS: Project[] = [
   {
     slug: "meridian-health",
     eyebrow: "Meridian Health — Patient Portal",
-    title: "A Portal Patients Actually Log Into",
+    title: "Portals People Log Into More Than Once",
     description:
-      "We rebuilt the appointment and records flow around plain language and one rule: nothing a patient needs should sit more than five taps away.",
-    tags: ["Healthcare", "Web Development", "Accessibility"],
+      "A tool nobody wants to open twice isn't a tool, it's a chore. We build patient portals, dashboards, and internal systems around the two or three actions people actually need, and we bury everything else. Plain language, obvious navigation, and interfaces that don't punish someone for having a bad day.",
+    tags: ["Web Development", "Accessibility", "UX Writing"],
     category: "web",
     client: "Meridian Health",
     year: "2025",
@@ -101,10 +101,10 @@ export const PROJECTS: Project[] = [
   {
     slug: "northline-roasters",
     eyebrow: "Northline Roasters — Brand & Site",
-    title: "Giving a Third-Wave Roastery a Second Look",
+    title: "Marks That Hold Up Outside the Pitch Deck",
     description:
-      "A new mark, a new type system, and a site built around the one thing that actually sells coffee online: knowing exactly where and when it was roasted.",
-    tags: ["Branding", "Webflow", "Photography Direction"],
+      "A logo that only looks good on a slide isn't finished. We build identity systems that survive a coffee cup, a delivery truck, a low-res Instagram story, and a black-and-white fax if it comes to that. Every mark comes with the type, color, and usage rules that keep it consistent once it leaves our hands.",
+    tags: ["Branding", "Identity Systems", "Photography Direction"],
     category: "branding",
     client: "Northline Roasters",
     year: "2024",
@@ -136,10 +136,10 @@ export const PROJECTS: Project[] = [
   {
     slug: "basin-and-co",
     eyebrow: "Basin & Co. — Fintech Dashboard",
-    title: "Redesigning a Fintech Dashboard for Trust at a Glance",
+    title: "Dashboards a First-Time User Can Read in Seconds",
     description:
-      "A full UX overhaul that took a dense, spreadsheet-like dashboard and made it something a first-time user could read correctly in ten seconds.",
-    tags: ["UI/UX Design", "Fintech", "Design System"],
+      "Dense data doesn't have to feel dense. We take spreadsheet-heavy tools and rebuild the hierarchy so the most important number is the first thing anyone sees. Design systems, component libraries, and a visual language that scales as the product grows.",
+    tags: ["UI/UX Design", "Product", "Design Systems"],
     category: "uiux",
     client: "Basin & Co.",
     year: "2024",
@@ -171,10 +171,10 @@ export const PROJECTS: Project[] = [
   {
     slug: "fernweh-travel",
     eyebrow: "Fernweh Travel — SEO & Growth Campaign",
-    title: "Turning Search Intent Into Bookings",
+    title: "Traffic That Turns Into Bookings, Not Just Visits",
     description:
-      "A technical SEO overhaul and a content strategy rebuilt around booking intent instead of raw traffic. Organic bookings went up, cost per acquisition came down.",
-    tags: ["SEO", "Digital Marketing", "Content Strategy"],
+      "Ranking for a keyword means nothing if the page underneath it doesn't convert. We audit technical SEO and content strategy together, because a fast site with the wrong message and a slow site with the right one both fail the same way. The goal is the action after the click, not the click itself.",
+    tags: ["SEO", "Content Strategy", "Conversion"],
     category: "marketing",
     client: "Fernweh Travel",
     year: "2025",
@@ -220,5 +220,5 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
   { key: "uiux", label: "UI/UX" },
   { key: "web", label: "Web Development" },
   { key: "ecommerce", label: "Ecommerce" },
-  { key: "marketing", label: "Marketing" },
+  { key: "marketing", label: "Growth" },
 ];

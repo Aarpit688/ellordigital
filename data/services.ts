@@ -34,7 +34,7 @@ export const SERVICES: Service[] = [
     name: "Brand Identity",
     tagline: "People should know it's you before they read a single word.",
     shortDescription:
-      "Logos, type, color, and voice, documented tightly enough to hold up across a hundred different places they'll show up.",
+      "Positioning, naming, visual identity, and voice—built to hold up everywhere the brand shows up, not just on the homepage.",
     heroSubtitle:
       "A brand that looks right on a business card, a billboard, and a phone notification takes more than one logo file. We build the whole system so it holds together everywhere it lands.",
     overview: [
@@ -67,7 +67,7 @@ export const SERVICES: Service[] = [
     name: "UI/UX Design",
     tagline: "Design that steps aside so people can do what they came to do.",
     shortDescription:
-      "Interface design backed by research, for products and sites where being usable is the actual point.",
+      "Interfaces designed around how people actually think and move—not around what looks impressive in a portfolio screenshot.",
     heroSubtitle:
       "We start by watching what people actually reach for, then build the shortest honest path to it.",
     overview: [
@@ -100,7 +100,7 @@ export const SERVICES: Service[] = [
     name: "Web Design & Development",
     tagline: "A site that loads fast, reads clearly, and holds up when real traffic shows up.",
     shortDescription:
-      "Fast, accessible, and clearly yours, built around what your visitors are actually there to do.",
+      "Fast, accessible, clearly built websites that exist to do something specific—not to win an award for floating elements.",
     heroSubtitle:
       "We design and build in one continuous process, so the thing that ships is the thing that was designed, not a rough approximation of it.",
     overview: [
@@ -133,7 +133,7 @@ export const SERVICES: Service[] = [
     name: "E-commerce Development",
     tagline: "Storefronts built for the checkout, not just the browsing.",
     shortDescription:
-      "Stores designed around conversion research, not a stock theme with your logo dropped in.",
+      "Stores built around the purchase decision—not the catalogue. Conversion is the brief, not an afterthought.",
     heroSubtitle:
       "We treat checkout as the product. Everything before it, from merchandising to search to filtering, exists to get people there feeling sure.",
     overview: [
@@ -166,7 +166,7 @@ export const SERVICES: Service[] = [
     name: "SEO & Organic Growth",
     tagline: "Rankings that keep earning long after the invoice is paid.",
     shortDescription:
-      "A solid technical base plus content strategy, aimed at rankings that keep earning well after launch.",
+      "Technical foundation plus content strategy—built to earn rankings that compound over time rather than traffic that disappears when the budget stops.",
     heroSubtitle:
       "We fix the technical base first, then build content around what your best customers actually type into a search bar.",
     overview: [
@@ -199,7 +199,7 @@ export const SERVICES: Service[] = [
     name: "Digital Marketing",
     tagline: "Paid, content, and social, all aimed at one goal instead of three.",
     shortDescription:
-      "Paid media, content, and social campaigns pointed at a single growth goal instead of three channels doing their own thing.",
+      "Paid, content, and social working toward one commercial goal instead of three separate campaigns doing their own thing.",
     heroSubtitle:
       "We run paid, content, and social as one plan pointed at a number you actually care about, not three separate vanity dashboards.",
     overview: [
@@ -232,7 +232,7 @@ export const SERVICES: Service[] = [
     name: "Website Strategy",
     tagline: "Figure out what the site is for before you argue about how it looks.",
     shortDescription:
-      "Discovery, positioning, and information architecture, so the design and code that follow have a reason to exist.",
+      "Before we design anything, we figure out what the site needs to do, who it needs to do it for, and what is getting in the way of that right now.",
     heroSubtitle:
       "We map the business goals, the audiences, and the content model first, so every design and build decision traces back to something real instead of a preference.",
     overview: [
@@ -265,7 +265,7 @@ export const SERVICES: Service[] = [
     name: "Mobile App Development",
     tagline: "Apps that stay on the home screen instead of getting buried in a folder.",
     shortDescription:
-      "iOS and Android apps that feel native, built around the two or three things people actually open them to do.",
+      "iOS and Android apps are built around the two or three things people actually open them to do—and nothing else.",
     heroSubtitle:
       "We build cross-platform apps that feel native, start fast, and stick to the few jobs people downloaded them for.",
     overview: [
@@ -298,7 +298,7 @@ export const SERVICES: Service[] = [
     name: "Support & Maintenance",
     tagline: "The dull work that keeps a site fast, secure, and current.",
     shortDescription:
-      "Ongoing updates, monitoring, performance, and security, so your site doesn't quietly rot the month after launch.",
+      "Ongoing performance monitoring, security, and updates—so the site you launched stays the site you intended.",
     heroSubtitle:
       "Launch is the start, not the finish. We keep sites patched, watched, fast, and moving forward, so small problems get caught before they turn into outages.",
     overview: [

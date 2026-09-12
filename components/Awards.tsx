@@ -9,7 +9,7 @@ export default function Awards() {
           Recognition
         </p>
         <h2 className="font-display text-[clamp(28px,4.4vw,48px)] max-w-[720px] mb-10 leading-tight">
-          Work that gets noticed — now and then by a jury.
+          Work that gets noticed—by the people it was built for first.
         </h2>
       </Reveal>
 

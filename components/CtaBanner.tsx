@@ -2,8 +2,8 @@ import Reveal from "./Reveal";
 import OpenModalButton from "./OpenModalButton";
 
 export default function CtaBanner({
-  heading = "Ready to see it clearly?",
-  subtext = "Thirty minutes, no deck, no pressure. Just a straight conversation about what's working and what isn't.",
+  heading = "Ready to build something worth talking about?",
+  subtext = "Thirty minutes. No deck, no retainer pitch, no pressure. Just a straight conversation about what you're building and whether we're the right people to help.",
   buttonLabel = "Book a free strategy call",
   id,
 }: {

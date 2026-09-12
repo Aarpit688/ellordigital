@@ -22,7 +22,7 @@ export default function IndustryCard({ industry }: { industry: Industry }) {
       <p className="text-muted leading-relaxed mb-6">{industry.description}</p>
 
       <p className="font-mono text-xs uppercase tracking-wide text-dim mb-3">
-        How we help
+        What we focus on
       </p>
       <ul className="space-y-2.5 mb-6">
         {industry.howWeHelp.map((h) => (

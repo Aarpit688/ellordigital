@@ -60,11 +60,11 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="border border-line bg-surface p-6 md:p-8">
       <div className="grid md:grid-cols-2 gap-4">
-        <Field id="contactFullName" label="Full Name*" value={form.fullName} onChange={update("fullName")} required />
-        <Field id="contactEmail" label="Email Address*" type="email" value={form.email} onChange={update("email")} required />
+        <Field id="contactFullName" label="Full Name" value={form.fullName} onChange={update("fullName")} required />
+        <Field id="contactEmail" label="Email Address" type="email" value={form.email} onChange={update("email")} required />
       </div>
       <div className="grid md:grid-cols-2 gap-4">
-        <Field id="contactPhone" label="Phone Number*" type="tel" value={form.phone} onChange={update("phone")} required />
+        <Field id="contactPhone" label="Phone Number" type="tel" value={form.phone} onChange={update("phone")} required />
         <Field id="contactWebsite" label="Company Website" type="url" value={form.website} onChange={update("website")} />
       </div>
       <div className="grid md:grid-cols-2 gap-4">
@@ -77,7 +77,7 @@ export default function ContactForm() {
         />
         <SelectField
           id="contactBudget"
-          label="Estimated budget"
+        label="Estimated Budget"
           value={form.budget}
           onChange={update("budget")}
           options={BUDGETS}
@@ -85,7 +85,7 @@ export default function ContactForm() {
       </div>
       <Field
         id="contactDetails"
-        label="Tell us about your project*"
+        label="Tell us about your project"
         value={form.details}
         onChange={update("details")}
         required

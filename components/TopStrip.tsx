@@ -8,7 +8,7 @@ export default function TopStrip() {
   return (
     <div className="flex items-center justify-between px-5 md:px-10 py-2 text-[13px] border-b border-line bg-bg">
       <a href="tel:2138949933" className="font-mono text-muted tracking-wide">
-        213.894.9933
+        +91 9311127429
       </a>
       <button
         onClick={openModal}

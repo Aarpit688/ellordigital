@@ -35,8 +35,7 @@ export default function Footer() {
             <Logo size={26} wordmarkClassName="text-lg" />
           </Link>
           <p className="text-muted max-w-[280px] text-sm my-4">
-            A brand &amp; web studio in Los Angeles, working with clients
-            everywhere.
+            ELLOR is a studio combining strategy, design, and engineering under one team, present on every project from kickoff through launch and beyond.
           </p>
 
           {status === "done" ? (
@@ -93,7 +92,7 @@ export default function Footer() {
           <h2 className="font-mono text-xs uppercase tracking-wide text-dim mb-1.5">Contact</h2>
           <a href="tel:2138949933" className="flex items-center gap-2.5 text-sm text-muted hover:text-lime">
             <UiIcon name="phone" size={15} className="text-lime shrink-0" />
-            213.894.9933
+            +91 9311127429
           </a>
           <a href="mailto:hello@ellordigital.com" className="flex items-center gap-2.5 text-sm text-muted hover:text-lime break-all">
             <UiIcon name="mail" size={15} className="text-lime shrink-0" />

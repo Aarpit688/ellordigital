@@ -27,11 +27,11 @@ export default function Hero() {
 
         <h1 className="font-display font-bold tracking-tight leading-[0.9] text-[clamp(48px,11.5vw,150px)] mb-7 text-ink">
           <span className="hero-line">
-            <span style={{ animationDelay: "0.15s" }}>Clarity that</span>
+            <span style={{ animationDelay: "0.15s" }}>Strategy. Design.</span>
           </span>
           <span className="hero-line">
             <span style={{ animationDelay: "0.3s" }}>
-              drives <span className="hero-accent">growth.</span>
+              <span className="hero-accent">Technology.</span>
             </span>
           </span>
         </h1>
@@ -40,7 +40,7 @@ export default function Hero() {
           className="max-w-[640px] text-[clamp(19px,2.6vw,30px)] font-semibold leading-snug text-ink mb-9 animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Brand, web, and code for companies ready to grow — with intention.
+          Work that earns trust before a word is read. Ellor Digital builds products, brands, and experiences for businesses that take quality seriously.
         </p>
 
         <div

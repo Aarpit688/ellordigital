@@ -9,7 +9,7 @@ export interface ClientTestimonial {
 export const TESTIMONIALS: ClientTestimonial[] = [
   {
     quote:
-      "They treated our checkout like the product it actually is. Same brand, half the friction, and for once we could trust the numbers we were making decisions on.",
+      "Ellor Digital didn't just redesign our site—they reframed how we talk about ourselves. We've been in business for twelve years, and this is the first time our brand actually feels like us.",
     author: "Dana Cole",
     role: "Head of Ecommerce",
     company: "Aurora Outfitters",
@@ -17,7 +17,7 @@ export const TESTIMONIALS: ClientTestimonial[] = [
   },
   {
     quote:
-      "Patients stopped calling to do things they could suddenly handle themselves in under a minute. That's the entire point of a portal, and it took ELLOR to make ours actually do it.",
+      "They pushed back on two of our assumptions in week one and turned out to be right on both. That kind of clarity is exactly what we were paying for.",
     author: "Priya Nair",
     role: "Director of Digital",
     company: "Meridian Health",
@@ -25,7 +25,7 @@ export const TESTIMONIALS: ClientTestimonial[] = [
   },
   {
     quote:
-      "Same data, a completely different product. New users get it now, and it turned out 'trust at a glance' was a design problem we could actually solve.",
+      "The site launched on time and on budget, and the first week of traffic confirmed everything they said it would do. That almost never happens.",
     author: "Sofia Reyes",
     role: "VP Product",
     company: "Basin & Co.",

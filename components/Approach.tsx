@@ -33,12 +33,10 @@ export default function Approach() {
           How we work
         </p>
         <h2 className="font-display text-[clamp(28px,4.4vw,48px)] max-w-[720px] mb-5 leading-tight">
-          The ELLOR method — one word, five moves.
+          The Ellor Digital method—one direction, five clear steps.
         </h2>
         <p className="text-lg text-muted leading-relaxed max-w-[620px]">
-          Every project runs through the same five stages, in the same order.
-          Nothing skipped, nothing shuffled. It&apos;s the sequence that keeps
-          every design decision traceable back to a reason.
+          Every project runs the same sequence. In the same order. Because skipping steps is what turns good briefs into average outcomes.
         </p>
       </Reveal>
 

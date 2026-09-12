@@ -6,45 +6,43 @@ import GradientArt from "@/components/GradientArt";
 import TeamAvatar from "@/components/TeamAvatar";
 import UiIcon from "@/components/UiIcon";
 import Reveal from "@/components/Reveal";
+import FaqAccordion from "@/components/FaqAccordion";
 
 const VALUES = [
   {
-    title: "Senior people, not a bench",
+    title: "Senior Talent, Not a Bench",
     icon: "users",
     chip: "bg-blue/10 text-blue border-blue/25",
     description:
-      "Everyone who scopes your project also works on it. No proposal-team-to-delivery-team switch after the contract is signed.",
+      "The people who scope your project are the same people who build it. There is no handoff from a proposal team to a separate delivery team once the contract is signed.",
   },
   {
-    title: "Say the honest thing",
+    title: "Honest Recommendations",
     icon: "message",
     chip: "bg-amber/10 text-amber border-amber/25",
     description:
-      "If a request doesn't need what you think it needs, we'll tell you before we quote it, not after we've billed for it.",
+      "If your request doesn't need the solution you have in mind, we say so before we quote it, not after you've already paid for it.",
   },
   {
-    title: "Ship, then measure",
+    title: "Accountability Beyond Launch",
     icon: "gauge",
     chip: "bg-lime/10 text-lime border-lime/25",
     description:
-      "A launch is a checkpoint, not a finish line. We check back in at 30/60/90 days against the goals we agreed on at kickoff.",
+      "A launch marks a checkpoint, not an endpoint. We follow up after go-live to measure results against the goals set at kickoff.",
   },
   {
-    title: "Document everything",
+    title: "Full Documentation",
     icon: "doc",
     chip: "bg-violet/15 text-violet border-violet/25",
     description:
-      "Guidelines, code comments, and handoff docs written so your team can run without us — that's the actual definition of done.",
+      "We provide guidelines, code comments, and handoff documents so your team can operate independently. That is our definition of a completed project.",
   },
 ];
 
 const TEAM = [
-  { name: "Mara Devlin", role: "Founder & Strategy Lead" },
-  { name: "Theo Nakamura", role: "Design Director" },
-  { name: "Priya Raman", role: "Lead Engineer" },
-  { name: "Owen Castellano", role: "Senior Product Designer" },
-  { name: "Dana Whitfield", role: "SEO & Growth Lead" },
-  { name: "Sam Okafor", role: "Front-End Engineer" },
+  { name: "Strategist", role: "Owns the brief, keeps the project honest about what problem it's actually solving, and is the first call if scope starts drifting." },
+  { name: "Designer", role: "Owns the visual and UX decisions, from wireframe through final polish, and sits in on the same client conversations the strategist does." },
+  { name: "Engineer", role: "Builds what gets designed, flags what won't hold up in production before it's too late to change cheaply, and stays on through launch." },
 ];
 
 function ValueRow({
@@ -88,9 +86,9 @@ export default function StudioPage() {
     <>
       <PageHero
         breadcrumbs={<Breadcrumbs items={[{ label: "Studio" }]} />}
-        eyebrow="The studio"
-        title="Twelve people, one time zone, zero hand-offs."
-        subtitle="ELLOR is a small, senior team based in Los Angeles working with clients everywhere. Every project has a strategist, a designer, and an engineer on it from day one."
+        eyebrow="The Studio"
+        title="Small Team & One Time Zone"
+        subtitle="ELLOR is a skilled team working with clients everywhere. Every project has a strategist, a designer, and an engineer on it from day one."
       />
 
       <section className="max-w-[1180px] mx-auto px-5 md:px-10 pb-14 md:pb-16 grid md:grid-cols-2 gap-10 items-start">
@@ -103,18 +101,10 @@ export default function StudioPage() {
         />
         <div>
           <p className="text-lg text-muted leading-relaxed mb-4">
-            We started ELLOR because too many good projects were dying in
-            the gap between the agency that designed them and the
-            freelancer who was supposed to build them. Keeping strategy,
-            design, and engineering under one roof means fewer things get
-            lost in translation — and someone is always accountable for
-            the whole outcome, not just their slice of it.
+            We started ELLOR because too many good projects were dying in the gap between the agency that designed them and the freelancer left to build them. Keeping strategy, design, and engineering under one roof means fewer things get lost in translation, and someone is always accountable for the whole outcome, not just their slice of it.
           </p>
           <p className="text-lg text-muted leading-relaxed">
-            We work with a deliberately small client list at any given
-            time, because the alternative — spreading a senior team across
-            too many logos — is how agencies quietly turn into the thing
-            their clients hired them to avoid.
+            We work with a deliberately small client list at any given time, because the alternative, spreading a senior team across too many logos, is how agencies quietly turn into the thing their clients hired them to avoid.
           </p>
         </div>
       </section>
@@ -132,7 +122,7 @@ export default function StudioPage() {
 
       <section className="max-w-[1180px] mx-auto px-5 md:px-10 py-14 md:py-16 border-t border-line">
         <h2 className="font-display text-[clamp(26px,3.6vw,38px)] mb-10">
-          The people you&apos;d actually work with
+          How we&apos;re structured
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {TEAM.map((member, i) => (
@@ -141,7 +131,23 @@ export default function StudioPage() {
         </div>
       </section>
 
-      <CtaBanner />
+      <CtaBanner
+        heading="Ready to see it clearly?"
+        subtext="Thirty minutes, no deck, no pressure. Just a straight conversation about what's working and what isn't."
+      />
+
+      <section className="max-w-[1180px] mx-auto px-5 md:px-10 pb-20 md:pb-24">
+        <h2 className="font-display text-[clamp(28px,4.4vw,48px)] mb-10 leading-tight">FAQ</h2>
+        <FaqAccordion faqs={STUDIO_FAQS} />
+      </section>
     </>
   );
 }
+
+const STUDIO_FAQS = [
+  { q: "How big is the ELLOR team?", a: "We keep the team intentionally small and senior rather than scaling headcount for its own sake. What matters more than the number is that the people who scope your project are the same people who build it." },
+  { q: "Will I be working with the same people throughout the project, or does it get handed off?", a: "The same core team, strategist, designer, and engineer, stays on from kickoff through launch. Specialists may join for specific pieces of work, but there's no wholesale handoff to a different team partway through." },
+  { q: "How many projects do you take on at once?", a: "We deliberately limit how many clients we work with at any given time. It's a tradeoff we make on purpose, because a senior team spread across too many projects stops being a senior team in practice." },
+  { q: "What happens after launch? Do you disappear once the site is live?", a: "No. We check back in after launch against what we agreed the project needed to achieve, and we're available for ongoing work if that's useful to you." },
+  { q: "How do we find out if ELLOR is the right fit for our project?", a: "Book the free strategy call. It's a direct conversation about your project, not a sales pitch, and we'll tell you plainly if we're not the right match." },
+];

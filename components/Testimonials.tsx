@@ -40,7 +40,7 @@ export default function Testimonials() {
           What clients say
         </p>
         <h2 className="font-display text-[clamp(28px,4.4vw,48px)] max-w-[720px] mb-12 leading-tight">
-          The best thing a client can say is &ldquo;that fixed it.&rdquo;
+          The best thing a client can say is &ldquo;we don&apos;t need to explain this to anyone anymore.&rdquo;
         </h2>
       </Reveal>
       <div className="grid md:grid-cols-3 gap-5 items-stretch">

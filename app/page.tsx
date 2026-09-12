@@ -12,7 +12,7 @@ import Studio from "@/components/Studio";
 
 export const metadata: Metadata = {
   description:
-    "ELLOR is a small, senior brand & web studio in Los Angeles. Strategy, design, and code under one roof — brand identity, UI/UX, web, ecommerce, SEO, and growth, built for companies with something to prove.",
+    "Ellor Digital builds products, brands, and experiences for businesses that take quality seriously.",
   alternates: { canonical: "/" },
 };
 

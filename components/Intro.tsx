@@ -45,13 +45,10 @@ export default function Intro() {
           What we do
         </p>
         <h2 className="font-display text-[clamp(28px,4vw,44px)] leading-tight mb-5">
-          We don&apos;t decorate. <u className="accent-underline">We focus.</u>
+          We don&apos;t follow briefs. <u className="accent-underline">We solve problems.</u>
         </h2>
         <p className="text-lg text-muted leading-relaxed max-w-[560px] mb-7">
-          A website is a lens. Aim it wrong and your story scatters. We spend
-          most of our energy on the aim — research, positioning, and structure —
-          so the design and code that follow only have to sharpen what&apos;s
-          already true about your brand.
+          A brief tells us what you want. A discovery tells us what you need. We spend the first part of every engagement understanding your business, your audience, and the gap between where you are and where you&apos;re trying to go. Everything we design and build comes from that—not from a template, not from a trend, not from what worked for someone else.
         </p>
         <Link
           href="/approach"

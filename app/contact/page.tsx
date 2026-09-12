@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 const DETAILS = [
-  { label: "Phone", value: "213.894.9933", href: "tel:2138949933", icon: "phone", chip: "bg-blue/10 text-blue border-blue/25" },
+  { label: "Phone", value: "", icon: "phone", chip: "bg-blue/10 text-blue border-blue/25" },
   { label: "Email", value: "hello@ellordigital.com", href: "mailto:hello@ellordigital.com", icon: "mail", chip: "bg-violet/15 text-violet border-violet/25" },
-  { label: "Studio", value: "424 Sunset Ave, Los Angeles, CA", icon: "pin", chip: "bg-pink/10 text-pink border-pink/25" },
+  { label: "Studio", value: "", icon: "pin", chip: "bg-pink/10 text-pink border-pink/25" },
   { label: "Hours", value: "Mon–Fri, 9am–6pm PT", icon: "clock", chip: "bg-amber/10 text-amber border-amber/25" },
 ];
 
@@ -26,8 +26,8 @@ export default function ContactPage() {
       <PageHero
         breadcrumbs={<Breadcrumbs items={[{ label: "Contact" }]} />}
         eyebrow="Get in touch"
-        title="Tell us where it hurts."
-        subtitle="No sales gatekeeping — a strategist reads every message personally and replies within one business day."
+        title="Let's discuss your project."
+        subtitle="No sales gatekeeping — a strategist reviews every message personally and responds within one business day."
       />
 
       <section className="max-w-[1180px] mx-auto px-5 md:px-10 pb-20 md:pb-24 grid md:grid-cols-[1fr_1.3fr] gap-10 md:gap-14">

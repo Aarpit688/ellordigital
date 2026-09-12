@@ -11,13 +11,10 @@ export default function Studio() {
         The studio
       </p>
       <h2 className="font-display text-[clamp(26px,3.6vw,40px)] max-w-[820px] mb-5 leading-tight">
-        Twelve people, one time zone, zero account managers who&apos;ve never
-        opened Figma.
+        Small team. Senior people. No one here who hasn&apos;t done this before.
       </h2>
       <p className="text-lg text-muted max-w-[620px] leading-relaxed mb-7">
-        ELLOR is a small, senior team in Los Angeles. Every project has a
-        strategist, a designer, and an engineer on it from day one — so nothing
-        gets lost in a hand-off between people who&apos;ve never met.
+        Ellor Digital is a focused studio. Every project has a strategist, a designer, and a developer on it from day one—so nothing gets misread in handover between people who&apos;ve never spoken to each other. We stay small on purpose. It&apos;s the only way to stay good.
       </p>
       <Link
         href="/studio"
