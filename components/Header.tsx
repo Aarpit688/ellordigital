@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import Logo from "./Logo";
+import logoLockup from "@/public/logo-lockup.png";
 import ServiceIcon from "./ServiceIcon";
 import { useModal } from "./ModalContext";
 import { lockScroll, unlockScroll } from "@/lib/scrollLock";
@@ -43,8 +44,28 @@ export default function Header() {
             condensed ? "py-3" : "py-5"
           }`}
         >
-          <Link href="/" onClick={() => setMobileOpen(false)} aria-label="ELLOR Digital home">
-            <Logo size={26} wordmarkClassName="text-lg" markId="site-logo-mark" />
+          <Link
+            href="/"
+            onClick={() => setMobileOpen(false)}
+            aria-label="ELLOR Digital home"
+            className="relative inline-flex shrink-0 items-center"
+          >
+            <Image
+              src={logoLockup}
+              alt="ELLOR Digital"
+              priority
+              sizes="(min-width: 1024px) 90px, 70px"
+              className="h-7 lg:h-9 w-auto"
+            />
+            {/* Invisible FLIP target for <Preloader>: the intro logomark flies to
+                this box. It mirrors the mark's 44-unit frame as it sits inside the
+                lockup image, so the animation still lands exactly on the "E". */}
+            <span
+              id="site-logo-mark"
+              aria-hidden="true"
+              className="pointer-events-none absolute"
+              style={{ left: "-2.33%", top: "-5.13%", width: "38.29%", height: "90.78%" }}
+            />
           </Link>
 
           <nav
